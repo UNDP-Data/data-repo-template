@@ -17,7 +17,7 @@ You can view detailed logs and errors in the `GitHub Actions` tab.
 ### 🔧 Trigger Conditions
 
 This workflow runs on:
-* Push to any branch when: Files in data/ or schema/ folders with supported extensions are changed
+* Push to any branch when: Files in `data/` or `schema/` folders with supported extensions are changed
 * Pull Requests modifying those same files
 
 ### 🛠️ Validation Script
@@ -27,7 +27,7 @@ The validation logic is handled by `validation/validate.js`.
 __🔍 How It Works:__
 * Looks for files in `data/` with one of the following extensions: `.csv`, `.xlsx`, `.xls`, `.json`.
 * For each data file, checks for a corresponding schema file in the schema/ directory:
-    * The schema file must have the same base name and a .json extension.
+    * The schema file must have the same base name and a `.json` extension.
     * If no schema exists, the data file is considered valid by default.
 * Validates the data against the schema.
 * Logs success or details of any validation errors.
