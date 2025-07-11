@@ -32,6 +32,20 @@ __🔍 How It Works:__
 * Validates the data against the schema.
 * Logs success or details of any validation errors.
 
+### Schema format
+The schema file in the `schema/` folder must have the following data type
+
+```
+{
+  columnName: string;
+  type: 'string' | 'number' | 'Alpha 3 code' | 'dateTime' | 'boolean';
+  required?: boolean;
+  enum?: string[]; // only applicable if type is string
+  range?: [number, number]; // only applicable if type is number
+  dateFormat?: string; // only applicable if type is dateTime
+}[]
+```
+
 ## Related Repos
 * [name of the repo where this data is used](link to repo where this data is used): This is the application or project that uses this dataset. [View the application site]({{link to the project site here}})
 

@@ -6,13 +6,14 @@
     },
     {
         "columnName": "column 2",
-        "type": "string",
+        "type": "number",
         "required": true
     },
     {
         "columnName": "column 3",
         "type": "dateTime",
-        "required": true
+        "required": true,
+        "dateFormat": "MM-yyyy"
     },
     {
         "columnName": "column 4",
