@@ -4,7 +4,7 @@ This repository serves as a template for organizing and managing data files acro
 ## ✅ Automated Data Validation
 A GitHub Action is included to automatically validate uploaded data files (`.csv`, `.json`, `.xlsx`, `.xls`) whenever a commit or pull request modifies files in the `data/` or `schema/` folders.
 
-__🔁 What Happens on Validation Failure__
+#### 🔁 What Happens on Validation Failure
 
 If validation fails:
 * 🔍 The workflow identifies the modified data files
@@ -14,17 +14,17 @@ If validation fails:
 
 You can view detailed logs and errors in the `GitHub Actions` tab.
 
-__🔧 Trigger Conditions__
+#### 🔧 Trigger Conditions
 
 This workflow runs on:
 * Push to any branch when: Files in data/ or schema/ folders with supported extensions are changed
 * Pull Requests modifying those same files
 
-__🛠️ Validation Script__
+#### 🛠️ Validation Script
 
 The validation logic is handled by `validation/validate.js`.
 
-🔍 How It Works:
+###### 🔍 How It Works:
 * Looks for files in `data/` with one of the following extensions: `.csv`, `.xlsx`, `.xls`, `.json`.
 * For each data file, checks for a corresponding schema file in the schema/ directory:
     * The schema file must have the same base name and a .json extension.
