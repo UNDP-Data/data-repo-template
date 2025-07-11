@@ -1,7 +1,6 @@
 # 📦 Data Repository Template
 This repository serves as a template for organizing and managing data files across projects. It provides a standardized structure for storing, validating, and sharing datasets effectively.
 
----
 
 ## ✅ Automated Data Validation
 A GitHub Action is included to automatically validate uploaded data files (`.csv`, `.json`, `.xlsx`, `.xls`) whenever a commit or pull request modifies files in the `data/` or `schema/` folders.
@@ -16,7 +15,6 @@ If validation fails:
 
 You can view detailed logs and errors in the `GitHub Actions` tab.
 
----
 
 ### 🔧 Trigger Conditions
 
@@ -24,7 +22,6 @@ This workflow runs on:
 * Push to any branch when: Files in `data/` or `schema/` folders with supported extensions are changed
 * Pull Requests modifying those same files
 
----
 
 ### 🛠️ Validation Script
 
@@ -39,6 +36,7 @@ The validation logic is handled by `validation/validate.js`.
     * If no schema exists, the data file is considered valid by default.
 * Validates the data against the schema.
 * Logs success or details of any validation errors.
+
 
 ### 📐 Schema format
 The schema file in the `schema/` folder must be a JSON array with the following structure:
