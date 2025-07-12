@@ -77,10 +77,31 @@ jobs:
               echo
             done
             
-            # Commit the reverted data files
+            # Commit the reverted data files and add/update logs
             echo
+            git add validation.log
             git add data/*.csv data/*.json data/*.xlsx data/*.xls 2>/dev/null || true
-            git commit -m "Revert data files due to validation failure"
+            git commit -m "Revert data files due to validation failure + Add/update logs"
             git push origin HEAD
             exit 1  # Fail the workflow
+          else
+            cd ..
+            echo "✅ Validation passed!"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            
+            # Only commit if validation.log exists and has changes
+            if [ -f validation.log ]; then
+              git add validation.log
+              if ! git diff --cached --quiet; then
+                git commit -m "Add/update logs"
+                git push origin HEAD
+                echo "📝 Validation logs committed"
+              else
+                echo "📝 No changes to commit"
+              fi
+            else
+              echo "📝 No validation log to commit"
+            fi
+            exit 0  # Successful workflow
           fi
