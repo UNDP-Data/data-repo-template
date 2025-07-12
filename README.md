@@ -96,8 +96,6 @@ Row: 2 | Column: column 4 | ⚠️ Error: column 4 must be a valid number. Recei
 📄 data04.csv
 
 ---
-
-
 ```
 
 ## Related Repos
