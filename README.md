@@ -1,6 +1,8 @@
 # 📦 Data Repository Template
 This repository serves as a template for organizing and managing data files across projects. It provides a standardized structure for storing, validating, and sharing datasets effectively.
 
+__[Log file](./validation.log)__
+
 
 ## ✅ Automated Data Validation
 A GitHub Action is included to automatically validate uploaded data files (`.csv`, `.json`, `.xlsx`, `.xls`) whenever a commit or pull request modifies files in the `data/` or `schema/` folders.
